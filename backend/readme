@@ -1,0 +1,7 @@
+Para verificação do desafio proposto, sugiro rodar o banco de dados no Xampp.
+
+A porta padrao é a 3000, setada na interface do projeto.
+
+Para visualização dos arquivos Json gerados, basta colocar /cartao em frente a URL do banco!
+
+Os dados do banco de dados estão no arquivo de Connection.js 
