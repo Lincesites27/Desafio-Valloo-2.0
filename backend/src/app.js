@@ -8,7 +8,7 @@ app.use(express.json());
 
 connection.connect(err => {
   if (err) {
-    console.error("Erro ao conectar ao banco de dados: " + err.stack);
+    console.error("Erro ao conectar ao banco de dados: " + err);
     return;
   }
   console.log("Conectado ao banco de dados com sucesso.");
@@ -19,7 +19,7 @@ connection.connect(err => {
 app.get("/cartao", (req, res) => {
   connection.query("SELECT * FROM cartao", (err, results) => {
     if (err) {
-      console.error("Erro ao consultar dados: " + err.stack);
+      console.error("Erro ao consultar dados: " + err);
       res.status(500).send("Erro ao consultar dados.");
       return;
     }
@@ -39,11 +39,11 @@ app.post("/cartao", (req, res) => {
     [numero, nomeUsuario, codigoSeguranca, dataValidade],
     (err, results) => {
       if (err) {
-        console.error("Erro ao inserir dados: " + err.stack);
+        console.error("Erro ao inserir dados: " + err);
         res.status(500).send("Erro ao inserir dados.");
         return;
       }
-      res.send("Cartão adicionado com sucesso.");
+      res.send("Produto adicionado com sucesso.");
     }
   );
 });
@@ -62,11 +62,12 @@ app.put("/cartao/:id", (req, res) => {
     [nomeUsuario, numero, codigoSeguranca, dataValidade, id],
     (err, results) => {
       if (err) {
-        console.error("Erro ao atualizar dados: " + err.stack);
+        console.error("Erro ao atualizar dados: " + err);
         res.status(500).send("Erro ao atualizar dados.");
         return;
       }
-      res.send("Cartão atualizado com sucesso.");
+    
+      res.send("Produto alterado com sucesso!");
     }
   );
 });
@@ -81,11 +82,11 @@ app.delete("/cartao/:id", (req, res) => {
     [id],
     (err, results) => {
       if (err) {
-        console.error("Erro ao excluir dados: " + err.stack);
+        console.error("Erro ao excluir dados: " + err);
         res.status(500).send("Erro ao excluir dados.");
         return;
       }
-      res.send("Cartão excluído com sucesso.");
+      res.send("Produto deletado com sucesso!");
     }
   );
 });

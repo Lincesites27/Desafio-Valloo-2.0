@@ -9,4 +9,5 @@ Os dados do banco de dados estão no arquivo de Connection.js.
 Tomei a liberdade também de ocultar os dados de conexao, somente para manter as boas práticas de segurança.
 O arquivo se encontra em .env, porém estou enviando um .env.example que voce pode conectar a seu banco e seguir o modelo de exemplo.
 
+
 peço desculpas pelo node_modules, acredito que subi o comit antes de subir o gitignore, por isso ele continua aparecendo no meu git hub
